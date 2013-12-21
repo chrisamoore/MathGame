@@ -1,0 +1,81 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "d51ec3d4cbd3ebc416484ad60242d6dc",
+    "packages": [
+        {
+            "name": "aura/sql",
+            "version": "dev-develop-2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auraphp/Aura.Sql.git",
+                "reference": "9139ab857c5db10672a34b480a8299f88fdf51f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auraphp/Aura.Sql/zipball/9139ab857c5db10672a34b480a8299f88fdf51f3",
+                "reference": "9139ab857c5db10672a34b480a8299f88fdf51f3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "aura": {
+                    "type": "library"
+                },
+                "branch-alias": {
+                    "dev-develop-2": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Aura Contributors",
+                    "homepage": "https://github.com/auraphp/Aura.Sql/contributors"
+                }
+            ],
+            "description": "A PDO extension that provides lazy connections, array quoting, identifier quoting, query profiling, value binding, and convenience methods for common fetch styles. Because it extends PDO, existing code that uses PDO can use this without any changes to the existing code.",
+            "homepage": "http://auraphp.github.com/Aura.Sql",
+            "keywords": [
+                "mysql",
+                "pdo",
+                "pgsql",
+                "postgres",
+                "postgresql",
+                "sql server",
+                "sqlite",
+                "sqlserver",
+                "sqlsrv"
+            ],
+            "time": "2013-12-20 00:06:12"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "aura/sql": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

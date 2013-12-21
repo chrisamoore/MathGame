@@ -1,0 +1,19 @@
+{
+    "name"             : "Moore/MathGame",
+    "description"      : "Math Game for my Son",
+    "minimum-stability": "dev",
+    "authors"          : [
+        {
+            "name" : "Christopher Moore",
+            "email": "chris@camdesigns.net"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+                "Moore/Game"
+            ]
+    },
+    "require": {
+        "aura/sql": "2.0.x-dev"
+    }
+}
