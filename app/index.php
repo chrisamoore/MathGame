@@ -77,19 +77,17 @@
     <div class="container">
       <br /><br />
       <div class="starter-template">
-        <h1>Select the Number of Items</h1>
+        <h1>How Many Pepperonis are there ?</h1>
           <?php for ($i = 1; $i <= $number; $i++): ?>
               <img src="img/pepperoni.png" height="200" width="auto">
           <?php endfor; ?>
       </div>
       <div>
           <?php foreach ($game->getShuffled () as $key => $value): ?>
-              <button id="<?= $key ?>" class="btn btn-info btn-lg"> <?= $value ?></button>
+              <button id="<?= $key ?>" class="btn btn-info btn-lg answer"> <?= $value ?></button>
           <?php endforeach; ?>
+          <button class="btn btn-sucess btn-lrg next">Play Again</button>
       </div>
-      <pre>
-          <?php print_r ($game); ?>
-      </pre>
     </div><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
@@ -102,11 +100,24 @@
            var obj = {
                id: <?= $game->id ?>
            };
-           $('button').on('click', function () {
+
+           $('.answer').on('click', function () {
                obj.guess = $(this).context.id;
                $.post('/check.php', obj, function (data, textStatus, xhr) {
-                   console.log(data);
+                   obj.answer = data.answer;
+                   if(obj.answer == true){
+                        alert('Correct');
+                   }else{
+                        alert('Try Again');
+                    }
                });
+           });
+
+           $('.next').on('click', function(){
+               console.log(obj);
+               if(obj.answer == true){
+                   location.reload();
+               }
            });
        });
     </script>

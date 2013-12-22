@@ -207,7 +207,7 @@
         /**
          * @param $guess
          *
-         * @param $id
+         * @internal param $id
          *
          * @internal param $checkAnswer
          * @description

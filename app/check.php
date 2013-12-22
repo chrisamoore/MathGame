@@ -10,8 +10,7 @@
     $pdo = null;
 
     $game = unserialize($result->object);
-    $answer = $game->isCorrect($_POST['guess'])
+    $answer = $game->isCorrect($_POST['guess']);
 
-    echo '<pre>';
-    print_r($game);
+    header('Content-Type: application/json');
     echo json_encode(['answer' => $answer]);
