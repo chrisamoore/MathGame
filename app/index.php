@@ -5,7 +5,7 @@
     use Moore\Game\Game;
 
     // Setup Game
-    $game = new Game(0, 10);
+    $game = new Game(0, 15);
     $game->play ();
     $number = $game->getNumber ();
 
@@ -26,7 +26,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Christopher A. Moore">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
     <title>Starter Template for Bootstrap</title>
@@ -51,6 +51,20 @@
         button {
             margin-right: 20px;
         }
+        .alert{
+			width: 600px;
+			margin: 40px 0px 0px 80px;
+			font-size: 80px;
+			padding: 62px;
+        }
+        .btn-info {
+			font-size: 80px;
+			padding: 40px 62px;
+		}
+		.btn-info:hover {
+			background-color: #39D752;
+			border-color: #26BC62;
+		}
     </style>
 </head>
 
@@ -86,8 +100,8 @@
           <?php foreach ($game->getShuffled () as $key => $value): ?>
               <button id="<?= $key ?>" class="btn btn-info btn-lg answer"> <?= $value ?></button>
           <?php endforeach; ?>
-          <button class="btn btn-sucess btn-lrg next">Play Again</button>
-      </div>
+<!--           <button class="btn btn-sucess btn-lrg next">Play Again</button>
+ -->      </div>
     </div><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
@@ -106,11 +120,19 @@
                $.post('/check.php', obj, function (data, textStatus, xhr) {
                    obj.answer = data.answer;
                    if(obj.answer == true){
-                        alert('Correct');
+						location.reload(); // Correct answer
                    }else{
-                        alert('Try Again');
+						$('body').prepend('<div class="alert alert-danger">Try Again</div>');
+						setTimeout(function(){
+							$('.alert').fadeOut( "slow", function() {
+								$('.alert').remove();
+						  }); },2500);
                     }
                });
+           });
+
+           $('img').on('click', function () {
+				$(this).css('opacity', .4);
            });
 
            $('.next').on('click', function(){

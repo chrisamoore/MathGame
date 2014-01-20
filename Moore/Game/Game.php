@@ -7,11 +7,6 @@
 
     namespace Moore\Game;
 
-
-        /**
-         * Class Game
-         *  * @package Moore\Game
-         */
     /**
      * Class Game
      *  * @package Moore\Game
@@ -165,7 +160,7 @@
          * @return int
          */
         public function generateNumber() {
-            return mt_rand ($this->min, $this->max);
+            return mt_rand($this->min, $this->max);
         }
 
         /**
@@ -235,4 +230,4 @@
             return $this;
         }
     }
- 
+
